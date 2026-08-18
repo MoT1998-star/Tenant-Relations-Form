@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AmTrust Realty — Tenant Profile
+   AmTrustRE — Tenant Profile
    Handles: scroll progress + reveal animation, "Other" field reveals,
    sports-team tag input, days-in-month population, validation,
    submission-object assembly, and the success state swap.
