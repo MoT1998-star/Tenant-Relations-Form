@@ -168,13 +168,11 @@ input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--border-subtle);
 }
-.wordmark{
-  font-family:var(--font-display);
-  font-size:1.15rem;
-  letter-spacing:0.01em;
-  color:var(--midnight);
+.masthead-logo{
+  height:28px;
+  width:auto;
+  display:block;
 }
-.wordmark-accent{color:var(--deep-blue); font-style:italic}
 
 /* ---------------------------------- Hero ---------------------------------- */
 .hero{
