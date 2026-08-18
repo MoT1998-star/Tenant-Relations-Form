@@ -273,19 +273,14 @@
    * The `payload` object already contains every field, cleanly named,
    * ready to be sent as JSON.
    * ------------------------------------------------------------------ */
-  var SUBMISSION_ENDPOINT = ""; // e.g. "https://your-backend.example.com/api/tenant-profile"
+  var SUBMISSION_ENDPOINT = "https://134c887d2d90e1d5a9c9682bedd163.17.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/51c9becc06a643c28de864e8422583c4/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=FingqG1ZfXM4oJkvtOfSV0lvN-cVQ5i6U_05S1y-kd0";
 
   function submitToBackend(payload) {
-    // --- Real submission (enable once SUBMISSION_ENDPOINT is set) ---
-    // return fetch(SUBMISSION_ENDPOINT, {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(payload)
-    // });
-
-    // --- Placeholder while no backend is connected ---
-    console.log("Tenant profile submission (no backend connected yet):", payload);
-    return Promise.resolve({ ok: true });
+    return fetch(SUBMISSION_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
   }
 
   form.addEventListener("submit", function (e) {
