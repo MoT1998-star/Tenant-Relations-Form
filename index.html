@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>We'd Like to Know You Better — AmTrust Realty</title>
+<meta name="description" content="A short, personal questionnaire from AmTrust Realty to help us get to know you better.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Scroll progress indicator -->
+  <div class="progress-rail" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+  <header class="masthead">
+    <span class="wordmark">AmTrust<span class="wordmark-accent">Realty</span></span>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-plate" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="eyebrow eyebrow--gold">A Personal Note From AmTrust</p>
+        <h1 class="hero-title">We'd Like to Know<br>You Better.</h1>
+        <p class="hero-lead">A few quick questions to help us make your experience with AmTrust a little more personal.</p>
+        <p class="hero-note">Your responses are completely voluntary — we'll only use them to help personalize your experience as a tenant. Skip anything you'd rather not answer.</p>
+        <a href="#about" class="btn btn-primary btn-lg hero-cta">Begin</a>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <form id="tenantForm" novalidate>
+
+      <!-- SECTION 1 — ABOUT YOU -->
+      <section class="form-section reveal" id="about" aria-labelledby="about-heading">
+        <header class="section-head">
+          <p class="eyebrow">Section 1</p>
+          <h2 class="section-title" id="about-heading">About You</h2>
+        </header>
+
+        <div class="field-grid field-grid--2">
+          <div class="field">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+            <p class="field-error" id="firstName-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+            <p class="field-error" id="lastName-error" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="field-grid field-grid--2">
+          <div class="field">
+            <label for="company">Company <span class="label-soft">— if you'd like</span></label>
+            <input type="text" id="company" name="company" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="building">Building / property</label>
+            <select id="building" name="building">
+              <option value="" selected>Select your building…</option>
+              <option value="59 Maiden Lane">59 Maiden Lane</option>
+              <option value="250 Broadway">250 Broadway</option>
+              <option value="260 Madison Avenue">260 Madison Avenue</option>
+              <option value="360 Lexington Avenue">360 Lexington Avenue</option>
+              <option value="The Amberly">The Amberly</option>
+              <option value="203 Jay Street">203 Jay Street</option>
+              <option value="1 East Wacker">1 East Wacker</option>
+              <option value="33 North Dearborn">33 North Dearborn</option>
+              <option value="Parkline Chicago">Parkline Chicago</option>
+              <option value="135 South LaSalle">135 South LaSalle</option>
+              <option value="One SeaGate">One SeaGate</option>
+              <option value="One Illinois Center">One Illinois Center</option>
+              <option value="Other">Other</option>
+            </select>
+            <input type="text" id="buildingOther" name="buildingOther" class="reveal-field is-hidden" placeholder="Tell us where you're located">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <p class="field-error" id="email-error" role="alert"></p>
+        </div>
+
+        <fieldset class="field field--birthday">
+          <legend>Birthday <span class="label-soft">— year is entirely optional</span></legend>
+          <div class="birthday-grid">
+            <div class="field field--inline">
+              <label for="birthdayMonth" class="sr-only">Month</label>
+              <select id="birthdayMonth" name="birthdayMonth" aria-label="Birth month">
+                <option value="">Month</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
+              </select>
+            </div>
+            <div class="field field--inline">
+              <label for="birthdayDay" class="sr-only">Day</label>
+              <select id="birthdayDay" name="birthdayDay" aria-label="Birth day">
+                <option value="">Day</option>
+              </select>
+            </div>
+            <div class="field field--inline">
+              <label for="birthdayYear" class="sr-only">Year (optional)</label>
+              <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" id="birthdayYear" name="birthdayYear" placeholder="Year (optional)" aria-label="Birth year, optional">
+            </div>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- SECTION 2 — YOUR FAVORITES -->
+      <section class="form-section reveal" id="favorites" aria-labelledby="favorites-heading">
+        <header class="section-head">
+          <p class="eyebrow">Section 2</p>
+          <h2 class="section-title" id="favorites-heading">Your Favorites</h2>
+        </header>
+
+        <div class="field">
+          <label for="sportsTeamInput">What's your favorite sports team?</label>
+          <p class="field-helper">Add as many as you like — press Enter after each one.</p>
+          <div class="tag-input" id="sportsTagInput">
+            <div class="tag-list" id="sportsTagList"></div>
+            <input type="text" id="sportsTeamInput" placeholder="Type a team and press Enter">
+          </div>
+        </div>
+
+        <div class="field-grid field-grid--2">
+          <div class="field">
+            <label for="favoriteRestaurant">Favorite restaurant in NYC</label>
+            <input type="text" id="favoriteRestaurant" name="favoriteRestaurant">
+          </div>
+          <div class="field">
+            <label for="favoriteRestaurantsOther">Any other favorite restaurants?</label>
+            <input type="text" id="favoriteRestaurantsOther" name="favoriteRestaurantsOther">
+          </div>
+        </div>
+
+        <div class="field-grid field-grid--2">
+          <div class="field">
+            <label for="favoriteCoffee">Favorite coffee shop or coffee order</label>
+            <input type="text" id="favoriteCoffee" name="favoriteCoffee">
+          </div>
+          <div class="field">
+            <label for="favoriteDrink">Favorite drink</label>
+            <input type="text" id="favoriteDrink" name="favoriteDrink" placeholder="Coffee, wine, tequila, bourbon, cocktails, sparkling water…">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="favoriteSnack">Favorite snack or sweet</label>
+          <input type="text" id="favoriteSnack" name="favoriteSnack">
+        </div>
+
+        <div class="field">
+          <label id="cuisines-label">Favorite type of food / cuisine</label>
+          <p class="field-helper">Choose as many as you'd like.</p>
+          <div class="pill-group" role="group" aria-labelledby="cuisines-label">
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="Italian"><span>Italian</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="Japanese"><span>Japanese</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="Steakhouse"><span>Steakhouse</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="Mediterranean"><span>Mediterranean</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="Mexican"><span>Mexican</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="Chinese"><span>Chinese</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="French"><span>French</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="American"><span>American</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="Sushi"><span>Sushi</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="Kosher"><span>Kosher</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="Vegetarian / Vegan"><span>Vegetarian / Vegan</span></label>
+            <label class="pill"><input type="checkbox" name="favoriteCuisines" value="Other" data-other-toggle="cuisinesOther"><span>Other</span></label>
+          </div>
+          <input type="text" id="cuisinesOther" name="favoriteCuisinesOther" class="reveal-field is-hidden" placeholder="Tell us more">
+        </div>
+      </section>
+
+      <!-- SECTION 3 — OUTSIDE THE OFFICE -->
+      <section class="form-section reveal" id="outside" aria-labelledby="outside-heading">
+        <header class="section-head">
+          <p class="eyebrow">Section 3</p>
+          <h2 class="section-title" id="outside-heading">Outside the Office</h2>
+        </header>
+
+        <div class="field">
+          <label id="hobbies-label">What do you like doing outside of work?</label>
+          <p class="field-helper">Pick as many as apply.</p>
+          <div class="pill-group" role="group" aria-labelledby="hobbies-label">
+            <label class="pill"><input type="checkbox" name="hobbies" value="Golf"><span>Golf</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Tennis"><span>Tennis</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Pickleball"><span>Pickleball</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Running"><span>Running</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Cycling"><span>Cycling</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Fitness"><span>Fitness</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Yoga"><span>Yoga</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Skiing / Snowboarding"><span>Skiing / Snowboarding</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Fishing"><span>Fishing</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Boating"><span>Boating</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Cooking"><span>Cooking</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Wine"><span>Wine</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Art"><span>Art</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Museums"><span>Museums</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Theater"><span>Theater</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Live Music"><span>Live Music</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Movies"><span>Movies</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Reading"><span>Reading</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Travel"><span>Travel</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Sports"><span>Sports</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Gaming"><span>Gaming</span></label>
+            <label class="pill"><input type="checkbox" name="hobbies" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="otherHobbies">Any hobbies or interests we missed?</label>
+          <input type="text" id="otherHobbies" name="otherHobbies">
+        </div>
+      </section>
+
+      <!-- SECTION 4 — TRAVEL -->
+      <section class="form-section reveal" id="travel" aria-labelledby="travel-heading">
+        <header class="section-head">
+          <p class="eyebrow">Section 4</p>
+          <h2 class="section-title" id="travel-heading">Travel</h2>
+        </header>
+
+        <div class="field-grid field-grid--2">
+          <div class="field">
+            <label for="favoriteVacationDestination">Favorite vacation destination</label>
+            <input type="text" id="favoriteVacationDestination" name="favoriteVacationDestination">
+          </div>
+          <div class="field">
+            <label for="dreamDestination">Somewhere you'd love to visit</label>
+            <input type="text" id="dreamDestination" name="dreamDestination">
+          </div>
+        </div>
+
+        <div class="field">
+          <label id="vacation-label">What kind of vacation do you prefer?</label>
+          <div class="pill-group" role="group" aria-labelledby="vacation-label">
+            <label class="pill"><input type="checkbox" name="vacationTypes" value="Beach"><span>Beach</span></label>
+            <label class="pill"><input type="checkbox" name="vacationTypes" value="City"><span>City</span></label>
+            <label class="pill"><input type="checkbox" name="vacationTypes" value="Mountains"><span>Mountains</span></label>
+            <label class="pill"><input type="checkbox" name="vacationTypes" value="Ski trip"><span>Ski trip</span></label>
+            <label class="pill"><input type="checkbox" name="vacationTypes" value="Resort"><span>Resort</span></label>
+            <label class="pill"><input type="checkbox" name="vacationTypes" value="Adventure"><span>Adventure</span></label>
+            <label class="pill"><input type="checkbox" name="vacationTypes" value="Food & Wine"><span>Food &amp; Wine</span></label>
+            <label class="pill"><input type="checkbox" name="vacationTypes" value="Cultural / Museums"><span>Cultural / Museums</span></label>
+            <label class="pill"><input type="checkbox" name="vacationTypes" value="Relaxing getaway"><span>Relaxing getaway</span></label>
+            <label class="pill"><input type="checkbox" name="vacationTypes" value="Other" data-other-toggle="vacationTypesOther"><span>Other</span></label>
+          </div>
+          <input type="text" id="vacationTypesOther" name="vacationTypesOther" class="reveal-field is-hidden" placeholder="Tell us more">
+        </div>
+      </section>
+
+      <!-- SECTION 5 — A FEW MORE THINGS -->
+      <section class="form-section reveal" id="more" aria-labelledby="more-heading">
+        <header class="section-head">
+          <p class="eyebrow">Section 5</p>
+          <h2 class="section-title" id="more-heading">A Few More Things</h2>
+        </header>
+
+        <div class="field-grid field-grid--2">
+          <div class="field">
+            <label for="favoriteCharity">Favorite charity or cause</label>
+            <input type="text" id="favoriteCharity" name="favoriteCharity">
+          </div>
+          <div class="field">
+            <label for="favoriteMusic">Favorite musician, artist, band, or type of music</label>
+            <input type="text" id="favoriteMusic" name="favoriteMusic">
+          </div>
+        </div>
+
+        <div class="field-grid field-grid--2">
+          <div class="field">
+            <label for="favoriteEntertainment">Favorite book, author, movie, or TV show</label>
+            <input type="text" id="favoriteEntertainment" name="favoriteEntertainment">
+          </div>
+          <div class="field">
+            <label for="passions">Anything you're particularly passionate about?</label>
+            <input type="text" id="passions" name="passions">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="additionalNotes">Anything else you'd like us to know?</label>
+          <textarea id="additionalNotes" name="additionalNotes" rows="4"></textarea>
+        </div>
+      </section>
+
+      <!-- GIFT PREFERENCES -->
+      <section class="form-section form-section--gift reveal" id="gifts" aria-labelledby="gifts-heading">
+        <header class="section-head">
+          <p class="eyebrow eyebrow--gold">A few preferences — just in case</p>
+          <h2 class="section-title" id="gifts-heading">Gift Preferences</h2>
+        </header>
+
+        <div class="field">
+          <label id="gift-label">Which would you enjoy receiving most?</label>
+          <div class="pill-group" role="group" aria-labelledby="gift-label">
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Food"><span>Food</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Wine / Spirits"><span>Wine / Spirits</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Experiences"><span>Experiences</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Sports-related gifts"><span>Sports-related gifts</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Restaurant gift cards"><span>Restaurant gift cards</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Coffee"><span>Coffee</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Wellness"><span>Wellness</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Travel-related gifts"><span>Travel-related gifts</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Books"><span>Books</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Art / Design"><span>Art / Design</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Something for the office"><span>Something for the office</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Something for the family"><span>Something for the family</span></label>
+            <label class="pill"><input type="checkbox" name="giftPreferences" value="Surprise me"><span>Surprise me</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="giftRestrictions">Anything you don't drink, eat, or would prefer not to receive?</label>
+          <p class="field-helper">This helps us make sure we never send anything inappropriate.</p>
+          <input type="text" id="giftRestrictions" name="giftRestrictions">
+        </div>
+      </section>
+
+      <!-- CONSENT -->
+      <section class="form-section form-section--consent reveal" id="consent-section" aria-labelledby="consent-heading">
+        <h2 class="sr-only" id="consent-heading">Consent</h2>
+        <p class="consent-copy">Your responses are completely optional and will only be used by AmTrust Realty to help personalize your tenant experience. You may skip any question you'd prefer not to answer.</p>
+        <label class="consent-check">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span>I understand and am comfortable sharing the information I've provided for this purpose.</span>
+        </label>
+        <p class="field-error" id="consent-error" role="alert"></p>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-submit">Submit My Profile</button>
+      </section>
+
+    </form>
+
+    <!-- SUCCESS STATE -->
+    <section class="success-state is-hidden" id="successState" tabindex="-1">
+      <div class="success-inner">
+        <p class="eyebrow eyebrow--gold">Received</p>
+        <h2 class="success-title">Thank you.</h2>
+        <p class="success-lead">We're looking forward to getting to know you better.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 AmTrust Realty. This information is kept private and used only by our tenant relations team.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
