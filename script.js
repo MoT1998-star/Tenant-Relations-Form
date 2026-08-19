@@ -239,13 +239,7 @@
       hobbies: getCheckedValues("hobbies"),
       otherHobbies: val("otherHobbies"),
 
-      // Section 4 — Travel
-      favoriteVacationDestination: val("favoriteVacationDestination"),
-      dreamDestination: val("dreamDestination"),
-      vacationTypes: getCheckedValues("vacationTypes"),
-      vacationTypesOther: val("vacationTypesOther"),
-
-      // Section 5 — A Few More Things
+      // Section 4 — A Few More Things
       favoriteCharity: val("favoriteCharity"),
       favoriteMusic: val("favoriteMusic"),
       favoriteEntertainment: val("favoriteEntertainment"),
